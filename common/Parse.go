@@ -20,6 +20,16 @@ func Parse(Info *HostInfo) {
 
 func ParseUser(Info *HostInfo) {
 	if Info.Username == "" && Userfile == "" {
+		users, err := Readfile("/etc/passwd")
+		if err == nil {
+			for _, usr := range users {
+				usr1 := strings.Split(usr, ":")
+				if usr1[0] != "" {
+					Info.Passwords = append(Info.Passwords, usr1[0])
+				}
+			}
+			Passwords = Info.Passwords
+		}
 		return
 	}
 
