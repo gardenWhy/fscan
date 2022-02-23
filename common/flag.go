@@ -23,7 +23,7 @@ func Flag(Info *HostInfo) {
 	flag.StringVar(&Info.Ports, "p", DefaultPorts, "Select a port,for example: 22 | 1-65535 | 22,80,3306")
 	flag.StringVar(&PortAdd, "pa", "", "add port base DefaultPorts,-pa 3389")
 	flag.StringVar(&UserAdd, "usera", "", "add port base DefaultUsers,-usera user")
-	flag.StringVar(&PassAdd, "pwda", "", "add port base DefaultPasses,-pwda password")
+	flag.StringVar(&PassAdd, "pwda", "", "add port base DefaultPasses,-pwda \"password,pass,pwd\"")
 	flag.StringVar(&NoPorts, "pn", "", "the ports no scan,as: -pn 445")
 	flag.StringVar(&Info.Command, "c", "", "exec command (ssh)")
 	flag.StringVar(&Info.SshKey, "sshkey", "", "sshkey file (id_rsa)")
