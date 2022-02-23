@@ -141,7 +141,7 @@ func ParseInput(Info *HostInfo) {
 
 	if UserAdd != "" {
 		user := strings.Split(UserAdd, ",")
-		for a, _ := range Userdict {
+		for a := range Userdict {
 			Userdict[a] = append(Userdict[a], user...)
 			Userdict[a] = RemoveDuplicate(Userdict[a])
 		}
